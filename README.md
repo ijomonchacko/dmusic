@@ -1,5 +1,7 @@
 # Dmusic Music Player
 
+> Partial codebase for reference only. Check the Releases tab to test the app.
+
 A Flutter-based high-fidelity music player with a native BASS audio engine, cloud sync support, local library management, and offline playback.
 
 ## Overview
@@ -80,4 +82,4 @@ android/
 
 ## License
 
-See license.txt for licensing information.
+See LICENSE or license.txt for licensing and disclaimer information.
