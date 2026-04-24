@@ -1,0 +1,24 @@
+DMUSIC PROJECT LICENSE AND DISCLAIMER
+Version 1.0
+Last updated: April 24, 2026
+
+Copyright (c) 2026 Dmusic
+
+Permission is granted to view and use this repository for personal reference, learning, and evaluation.
+
+This repository is a partial codebase published on GitHub for reference only.
+
+Important disclaimer:
+- I do not host, run, or operate public streaming servers.
+- I do not provide or distribute hosted media content through this repository.
+- Any backend services, API endpoints, or infrastructure are not included in this repository.
+
+You are responsible for complying with all local laws, licensing rules, and copyright requirements when using or adapting this code.
+
+No warranty:
+This project is provided "AS IS", without warranty of any kind, express or implied, including but not limited to fitness for a particular purpose, merchantability, and non-infringement.
+
+Limitation of liability:
+In no event shall the author or contributors be liable for any claim, damages, or other liability, whether in contract, tort, or otherwise, arising from or in connection with the software or the use of this repository.
+
+If you need production usage rights or commercial licensing terms, obtain explicit written permission from the author.
