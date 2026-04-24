@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Dmusic.jpeg" alt="Dmusic" height="800" width="800" />
+</p>
+
 # Dmusic Music Player
 
 > Partial codebase for reference only. Check the Releases tab to test the app.
@@ -34,6 +38,12 @@ This project combines a custom native audio pipeline with modern Flutter UI to d
 - Search surfaces for local and cloud content.
 - Artist, album, and genre browsing flows.
 - Favorites management.
+
+### Lyrics Support
+
+- Synced lyrics support for timestamped line-by-line playback.
+- Plain lyrics fallback when synced lyrics are not available.
+- Multi-source lyrics lookup with matching and fallback strategies.
 
 ### Offline and Downloads
 
