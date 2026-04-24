@@ -1,0 +1,77 @@
+# CMakeLists.txt for Android Music Streaming App with FFmpeg Kit and Oboe
+
+cmake_minimum_required(VERSION 3.18.1)
+
+# Define the project
+project("native-lib")
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+
+# Add compiler definitions for FFmpeg Kit with full network and SSL support
+add_definitions(
+    -DAVFORMAT_NETWORK_ENABLED=1
+    -DFFMPEG_NETWORK_PROTOCOLS=1
+    -DHAVE_HTTPS=1
+    -DHAVE_HTTP=1
+    -DHAVE_TLS=1
+    -DHAVE_OPENSSL=1
+    -D__ANDROID__
+    -DCONFIG_NETWORK=1
+    -DCONFIG_PROTOCOLS=1
+    -DUSE_FFMPEG_KIT=1
+)
+
+# Add optimizations
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -DNDEBUG -Wall -Wextra -O3 -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG -ffast-math")
+
+# Include directories
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../oboe-1.9.3/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../../oboe-1.9.3/include
+)
+
+# Add subdirectory for Oboe
+add_subdirectory(../../oboe-1.9.3 oboe)
+
+# Find the log library
+find_library(log-lib log)
+
+# Using Java-based streaming with Bytedeco FFmpeg - disabling C++ FFmpeg usage
+message(STATUS "Using Java-based streaming with Bytedeco FFmpeg")
+add_definitions(-DDISABLE_NATIVE_FFMPEG=1)
+
+# Add C++ source files
+add_library(
+    native-lib
+    SHARED
+    src/main/cpp/StreamingEngineJavaOnly.cpp
+    src/main/cpp/native-lib.cpp
+)
+
+# Set target properties
+set_target_properties(native-lib PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+    POSITION_INDEPENDENT_CODE ON
+)
+
+# Compiler flags for performance and warnings
+target_compile_options(native-lib PRIVATE
+    -fPIC
+    -Wall
+    -Wextra
+    -Wno-unused-parameter
+    -Wno-unused-variable
+)
+
+# Link libraries (Mobile FFmpeg used via Java API)
+target_link_libraries(
+    native-lib
+    ${log-lib}
+    oboe
+    android
+) 

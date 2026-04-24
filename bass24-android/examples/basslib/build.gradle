@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        minSdkVersion 9
+        consumerProguardFiles '../proguard-bass.pro'
+    }
+    sourceSets {
+        main.manifest.srcFile 'AndroidManifest.xml'
+        // BASS library files
+        main.java.srcDirs = ['../../java']
+        main.jniLibs.srcDirs = ['../../libs']
+    }
+}

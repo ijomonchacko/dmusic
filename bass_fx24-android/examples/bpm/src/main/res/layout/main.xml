@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:fillViewport="true" xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:padding="10dp" android:layout_height="fill_parent">
+
+    <Button
+        android:id="@+id/open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="OpenClicked"
+        android:text="press here to open a file &amp; play it..." >
+</Button>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+</LinearLayout>
+
+<TextView
+    android:id="@+id/txtTempo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingTop="10dp"
+    android:text="Tempo = 0%" />
+
+    <SeekBar
+        android:id="@+id/sbTempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="60"
+        android:progress="30" />
+
+    <TextView
+        android:id="@+id/txtSamplerate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Samplerate = 44100Hz" />
+
+    <SeekBar
+        android:id="@+id/sbSamplerate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="26460"
+        android:progress="13230" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtBPM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:paddingTop="10dp"
+            android:text="BPM: 0.00"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtBeatPos"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Beat pos: 0.00"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/chkBeatPos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:onClick="ChkBeatPosClicked"
+        android:text="Enable / Disable showing Beat pos" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+	    <CheckBox
+	        android:id="@+id/chkBPM"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="ChkBPMClicked"
+	        android:text="BPM by period of seconds:" />
+	
+	    <EditText
+	        android:id="@+id/etxtBPM"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:focusable="false"
+	        android:gravity="center"
+	        android:inputType="number"
+	        android:text="10" />
+	    
+	</LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Detection progress of a decoding BPM:" />
+
+    <ProgressBar
+        android:id="@+id/pbProgressBPM"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/txtPos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Playing position: 00:00 / 00:00" />
+
+    <SeekBar
+        android:id="@+id/sbPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:fillViewport="true" xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:padding="10dp" android:layout_height="fill_parent">
+
+    <Button
+        android:id="@+id/open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="OpenClicked"
+        android:text="press here to open a file &amp; play it..." >
+</Button>
+
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.16"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="Volume" >
+
+</TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="DX8 Reverb" >
+
+</TextView>
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <SeekBar
+        android:id="@+id/sbVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.32"
+        android:max="100"
+        android:paddingRight="10dp"
+        android:progress="50" />
+
+    <SeekBar
+        android:id="@+id/reverb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.31"
+        android:max="20"
+        android:progress="0" />
+</LinearLayout>
+
+<TextView
+    android:id="@+id/txtTempo"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingTop="10dp"
+    android:text="Tempo = 0%" />
+
+    <SeekBar
+        android:id="@+id/sbTempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="60"
+        android:progress="30" />
+
+    <TextView
+        android:id="@+id/txtPos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Playing position: 00:00 / 00:00" />
+
+    <SeekBar
+        android:id="@+id/sbPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnDirection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="DirectionClicked"
+        android:text="Playing Direction - Reverse" />
+
+</LinearLayout>
+</ScrollView>

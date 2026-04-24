@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">dmusic</string>
+    <string name="app_version">2.5.0-beta</string>
+    <string name="app_build">25</string>
+</resources>
